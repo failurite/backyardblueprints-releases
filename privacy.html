@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Backyard Blueprints</title>
+<meta name="description" content="Privacy Policy for the Backyard Blueprints shed design app.">
+<link rel="icon" href="logo.svg">
+<style>
+  :root {
+    --paper: #f4efe2;
+    --paper-warm: #ede6d3;
+    --ink: #1a2a3a;
+    --ink-soft: #3a4a5e;
+    --ink-faint: #6a7689;
+    --blueprint: #2b6cb0;
+    --blueprint-light: #5a8fc7;
+    --blueprint-faint: rgba(43, 108, 176, 0.18);
+    --rule: rgba(43, 108, 176, 0.22);
+    --rule-soft: rgba(43, 108, 176, 0.10);
+    --accent: #c25e2a;
+    --accent-soft: rgba(194, 94, 42, 0.12);
+
+    --serif: 'Georgia', 'Iowan Old Style', 'Palatino', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --mono: 'Courier New', 'Courier', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(rgba(43,108,176,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,108,176,0.06) 1px, transparent 1px),
+      linear-gradient(rgba(43,108,176,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,108,176,0.10) 1px, transparent 1px);
+    background-size: 14px 14px, 14px 14px, 84px 84px, 84px 84px;
+  }
+  body::after {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse at 50% 0%, transparent 0%, rgba(140,110,60,0.08) 100%),
+      radial-gradient(ellipse at 30% 80%, rgba(194,94,42,0.04) 0%, transparent 50%);
+  }
+
+  header.nav, main, footer { position: relative; z-index: 1; }
+
+  /* ── Top bar ── */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(244, 239, 226, 0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+  .brand img, .brand-logo { width: 38px; height: 38px; color: var(--ink); }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+  .brand-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: 0.01em; }
+
+  nav.links { display: flex; gap: 28px; font-size: 14px; }
+  nav.links a { color: var(--ink-soft); text-decoration: none; transition: color 0.15s; font-weight: 500; }
+  nav.links a:hover { color: var(--blueprint); }
+  @media (max-width: 760px) { nav.links { display: none; } }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 20px; border-radius: 4px;
+    font-family: var(--sans); font-size: 14px; font-weight: 600;
+    text-decoration: none; cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid transparent; white-space: nowrap;
+  }
+  .btn-primary { background: var(--blueprint); color: #fff; }
+  .btn-primary:hover { background: #1f5896; transform: translateY(-1px); box-shadow: 0 6px 14px -4px rgba(43,108,176,0.4); }
+
+  /* ── Legal content ── */
+  .legal-wrap {
+    max-width: 740px; margin: 0 auto;
+    padding: 64px 24px 80px;
+  }
+  .legal-eyebrow {
+    font-family: var(--mono); font-size: 11px;
+    color: var(--blueprint); letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .legal-wrap h1 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.1; letter-spacing: -0.015em;
+    font-weight: 700; margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .legal-updated {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--ink-faint); margin-bottom: 40px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--rule);
+  }
+  .legal-wrap h2 {
+    font-family: var(--serif); font-size: 20px; font-weight: 700;
+    color: var(--ink); margin: 36px 0 10px;
+    letter-spacing: -0.01em;
+  }
+  .legal-wrap p { font-size: 15px; color: var(--ink-soft); margin-bottom: 14px; line-height: 1.7; }
+  .legal-wrap ul, .legal-wrap ol {
+    margin: 8px 0 16px 22px; color: var(--ink-soft); font-size: 15px; line-height: 1.7;
+  }
+  .legal-wrap li { margin-bottom: 6px; }
+  .legal-wrap a { color: var(--blueprint); }
+  .legal-wrap a:hover { text-decoration: underline; }
+
+  .legal-wrap table {
+    width: 100%; border-collapse: collapse;
+    margin: 16px 0 24px; font-size: 14px;
+  }
+  .legal-wrap th {
+    text-align: left; font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--blueprint); padding: 8px 12px;
+    border-bottom: 2px solid var(--rule);
+  }
+  .legal-wrap td {
+    padding: 8px 12px; color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+  }
+  .legal-wrap tr:last-child td { border-bottom: none; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 40px 24px 32px;
+    background: rgba(43,108,176,0.04);
+    margin-top: 60px;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px;
+  }
+  @media (max-width: 760px) { .footer-inner { grid-template-columns: 1fr; gap: 28px; } }
+  .footer-brand { font-family: var(--serif); font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .footer-tag { font-size: 14px; color: var(--ink-soft); max-width: 320px; }
+  .footer-col h4 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--blueprint); margin-bottom: 14px;
+  }
+  .footer-col a {
+    display: block; padding: 4px 0;
+    color: var(--ink-soft); text-decoration: none; font-size: 14px;
+    transition: color 0.15s;
+  }
+  .footer-col a:hover { color: var(--blueprint); }
+  .socials { display: flex; gap: 10px; margin-top: 4px; }
+  .social {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--ink); color: var(--paper);
+    display: grid; place-items: center;
+    text-decoration: none; transition: all 0.15s;
+  }
+  .social:hover { background: var(--blueprint); transform: translateY(-2px); }
+  .copyright {
+    max-width: 1200px; margin: 32px auto 0;
+    padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12px; color: var(--ink-faint);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-family: var(--mono);
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 283" style="width:100px;height:100px;" aria-label="Backyard Blueprints" role="img"><path fill="currentColor" fill-rule="evenodd" d="M139.50 230.90 C135.44 229.65 85.93 216.62 68.25 212.16 L54.00 208.55 L54.00 160.21 C54.00 114.65 53.90 111.89 52.25 112.36 C51.29 112.63 48.59 113.15 46.25 113.51 L42.00 114.18 L40.00 109.50 C38.90 106.94 38.00 104.50 38.00 104.09 C38.00 103.48 56.32 86.36 87.02 58.30 L92.71 53.09 L113.61 50.54 C161.04 44.75 175.57 42.89 176.81 42.47 C177.55 42.21 190.70 54.47 206.98 70.58 L235.83 99.15 L233.97 103.33 C232.25 107.20 231.62 107.65 225.31 109.59 C219.14 111.47 218.53 111.90 218.83 114.09 C220.61 127.15 218.61 139.08 213.46 146.06 L210.97 149.43 L214.11 151.88 C218.93 155.66 220.95 161.15 220.98 170.57 C221.02 186.46 214.95 198.40 202.50 206.92 C197.65 210.25 146.94 232.03 144.35 231.91 C143.33 231.87 141.15 231.41 139.50 230.90 Z M144.00 219.80 L144.00 209.60 L141.41 213.59 C138.30 218.39 133.86 221.59 127.92 223.31 L123.50 224.59 L133.00 227.21 C138.23 228.66 142.84 229.88 143.25 229.92 C143.66 229.96 144.00 225.41 144.00 219.80 Z M171.77 219.10 C183.47 214.10 195.36 208.84 198.18 207.41 C208.70 202.08 216.68 190.82 218.99 178.03 C221.05 166.71 217.92 155.54 211.84 152.44 C210.00 151.51 208.36 150.62 208.18 150.47 C208.01 150.32 209.46 148.11 211.41 145.56 C213.35 143.00 215.63 138.60 216.47 135.78 C218.22 129.89 218.48 119.40 216.98 115.44 C215.72 112.13 218.02 111.73 181.22 121.68 L152.93 129.33 L149.47 125.97 L146.00 122.61 L146.00 176.28 L146.00 229.95 L148.25 229.07 C149.49 228.59 160.07 224.10 171.77 219.10 Z M131.62 220.09 C145.83 213.63 148.20 189.40 136.11 174.14 C134.49 172.10 132.01 169.81 130.59 169.05 C127.40 167.34 127.31 166.21 130.27 165.09 C133.68 163.79 138.79 158.13 140.21 154.08 C142.25 148.29 141.69 136.33 139.11 130.50 C135.02 121.26 126.58 114.68 115.50 112.12 C112.75 111.48 99.25 109.45 85.50 107.60 L60.50 104.24 L58.25 106.29 L56.00 108.35 L56.00 157.61 C56.00 203.66 56.11 206.90 57.75 207.38 C58.71 207.66 68.95 210.38 80.50 213.41 C92.05 216.44 103.97 219.58 107.00 220.37 C115.11 222.50 126.59 222.37 131.62 220.09 Z M92.00 200.01 C83.47 197.85 76.39 196.07 76.25 196.05 C75.60 195.92 76.10 168.06 76.76 167.65 C78.15 166.79 111.24 173.96 114.39 175.80 C120.75 179.51 124.08 188.28 122.03 195.90 C119.63 204.80 114.03 205.57 92.00 200.01 Z M165.00 189.11 L165.00 174.23 L178.25 169.67 C195.89 163.59 195.48 163.68 198.82 165.41 C202.17 167.14 202.97 169.33 202.99 176.85 C203.00 183.59 200.70 188.51 196.09 191.54 C192.64 193.81 168.03 204.00 165.99 204.00 C165.38 204.00 165.00 198.25 165.00 189.11 Z M117.94 199.56 C121.33 195.95 121.80 189.29 119.06 183.63 C116.19 177.70 112.21 175.86 95.00 172.54 C87.58 171.11 80.71 169.77 79.75 169.56 C78.16 169.22 78.00 170.32 78.00 181.93 L78.00 194.68 L92.25 198.23 C110.01 202.65 114.80 202.90 117.94 199.56 Z M185.34 194.81 C195.58 190.86 199.54 187.37 200.88 181.10 C202.31 174.45 201.31 169.25 198.22 167.23 C195.84 165.66 195.11 165.80 181.37 170.43 L167.00 175.26 L167.00 188.61 L167.00 201.97 L172.25 199.90 C175.14 198.76 181.03 196.47 185.34 194.81 Z M143.88 164.25 C143.79 148.94 143.56 145.71 142.87 149.90 C141.81 156.29 139.07 161.08 134.49 164.58 L131.17 167.11 L135.51 171.11 C137.90 173.32 140.67 177.11 141.68 179.55 C142.68 182.00 143.61 183.99 143.75 184.00 C143.89 184.00 143.95 175.11 143.88 164.25 Z M165.00 143.73 L165.00 130.24 L179.75 126.11 C187.86 123.84 195.08 121.99 195.80 121.99 C196.51 122.00 198.20 123.10 199.55 124.45 C201.59 126.50 202.00 127.88 202.00 132.70 C201.99 139.03 199.84 143.77 195.80 146.37 C194.53 147.18 187.65 149.74 180.50 152.06 C173.35 154.37 166.94 156.48 166.25 156.74 C165.29 157.10 165.00 154.10 165.00 143.73 Z M93.00 153.43 C86.12 152.11 79.49 150.79 78.25 150.50 C76.06 149.98 76.00 149.62 76.00 136.98 C76.00 125.28 76.17 124.00 77.75 124.00 C83.37 124.01 111.58 129.22 114.16 130.73 C122.22 135.43 123.36 150.69 115.94 154.53 C112.16 156.48 107.91 156.28 93.00 153.43 Z M116.55 151.55 C121.21 146.88 119.02 135.22 112.86 131.92 C110.97 130.91 83.16 126.01 79.25 126.00 C78.32 126.00 78.00 128.95 78.00 137.41 L78.00 148.82 L87.25 150.45 C92.34 151.35 98.53 152.46 101.00 152.93 C109.74 154.58 113.88 154.21 116.55 151.55 Z M181.94 149.85 C189.12 147.46 195.33 144.76 196.62 143.47 C199.34 140.75 201.39 133.69 200.50 130.12 C199.76 127.16 197.24 124.01 195.60 123.98 C194.99 123.98 188.31 125.63 180.75 127.66 L167.00 131.34 L167.00 142.67 C167.00 151.06 167.32 154.00 168.25 154.00 C168.94 154.00 175.10 152.13 181.94 149.85 Z M141.28 117.82 C139.11 115.65 137.07 114.84 132.01 114.15 C125.82 113.31 125.63 113.34 127.98 114.88 C136.48 120.44 141.74 128.56 142.82 137.77 C143.40 142.69 143.54 141.87 143.78 132.05 C144.07 120.70 144.05 120.59 141.28 117.82 Z M206.83 112.91 C228.55 107.04 230.25 106.41 231.60 103.80 C232.40 102.26 232.79 101.00 232.48 101.00 C232.17 101.00 222.37 103.50 210.70 106.56 C199.04 109.62 182.54 113.93 174.04 116.15 C159.03 120.07 156.75 121.18 155.69 125.13 C155.21 126.90 154.54 127.06 206.83 112.91 Z M155.00 123.01 C156.21 120.08 156.07 119.84 148.18 111.26 C143.76 106.44 129.54 91.94 116.59 79.03 L93.05 55.57 L90.60 57.53 C87.48 60.03 40.00 104.01 40.00 104.41 C40.00 105.95 42.41 111.02 43.04 110.80 C43.49 110.63 52.75 102.17 63.62 92.00 C74.50 81.83 85.62 71.49 88.34 69.03 L93.28 64.56 L105.89 77.84 C145.68 119.73 151.60 125.82 152.63 125.91 C153.25 125.96 154.31 124.65 155.00 123.01 Z M181.09 112.42 C192.87 109.35 209.18 105.10 217.36 102.98 C225.53 100.86 232.39 98.94 232.61 98.72 C233.25 98.08 177.77 44.49 176.57 44.59 C165.39 45.54 96.07 54.70 96.25 55.20 C96.87 56.96 157.31 118.00 158.42 118.00 C159.11 118.00 169.31 115.49 181.09 112.42 Z M136.00 112.41 C136.00 111.41 97.73 72.00 96.76 72.00 C95.88 72.00 63.79 100.74 63.22 102.03 C63.07 102.38 76.79 104.58 93.72 106.92 C110.65 109.26 126.75 111.53 129.50 111.97 C132.25 112.41 134.84 112.82 135.25 112.88 C135.66 112.95 136.00 112.73 136.00 112.41 Z M53.72 108.95 C53.98 107.97 63.37 98.93 74.60 88.87 C85.82 78.81 94.99 70.33 94.98 70.04 C94.98 69.74 94.58 68.89 94.11 68.14 C93.47 67.13 87.22 72.39 69.71 88.64 C56.77 100.66 46.14 110.75 46.09 111.05 C46.04 111.35 47.63 111.41 49.63 111.18 C52.04 110.89 53.41 110.15 53.72 108.95 Z"/></svg>
+      <div class="brand-text">
+        <div class="brand-name">Backyard Blueprints</div>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#download">Download</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <a class="btn btn-primary" href="index.html#download">Get the app</a>
+  </div>
+</header>
+
+<main>
+  <div class="legal-wrap">
+    <div class="legal-eyebrow">// Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="legal-updated">Last updated: April 2026</p>
+
+    <h2>Overview</h2>
+    <p>Backyard Blueprints is a shed design app made by Backyard Blueprints LLC, a Massachusetts partnership. This policy explains what data we collect, why, and how you can control it. We keep collection minimal and do not sell your data.</p>
+
+    <h2>Data We Collect</h2>
+    <p>The app requires no account. When you use it:</p>
+    <ul>
+      <li><strong>Shed configurations</strong> — your current design (dimensions, roof type, door/window positions) is sent to our server to generate the 3D model and build plan. This contains no personal information and is not stored server-side.</li>
+      <li><strong>Anonymous device identifier</strong> — a randomly generated ID stored on your device and used only for analytics. It is not linked to your identity.</li>
+      <li><strong>Usage events</strong> — actions like opening the app, using undo, exporting a PDF, or generating a build plan are logged anonymously via PostHog.</li>
+      <li><strong>Saved designs</strong> — stored locally on your device only. We do not have access to them.</li>
+    </ul>
+    <p>All data sent between your device and our server is transmitted over HTTPS using industry-standard encryption.</p>
+
+    <h2>Analytics — PostHog</h2>
+    <p>We use PostHog to understand how the app is used so we can improve it. PostHog collects:</p>
+    <ul>
+      <li>Anonymous device identifier</li>
+      <li>App usage events (features used, shed sizes designed, exports)</li>
+      <li>Platform and device type</li>
+    </ul>
+    <p>PostHog is configured with cookies disabled. Events are queued locally when offline and sent when a connection is restored.</p>
+    <p><strong>Opt out:</strong> You can disable analytics at any time in the app's Settings panel. We also honor the Global Privacy Control signal — if your browser sends it, analytics are automatically disabled.</p>
+
+    <h2>Affiliate Links — Amazon, Home Depot, and Lowe's</h2>
+    <p>When you use the "Build My Cart" feature, materials links are generated using affiliate programs with Amazon, The Home Depot, and Lowe's. Clicking these links may set cookies on those retailers' sites per their own privacy policies. We receive aggregate commission data but not your personal information from these retailers.</p>
+    <ul>
+      <li><a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496" target="_blank" rel="noopener">Amazon Privacy Notice</a></li>
+      <li><a href="https://www.homedepot.com/c/Privacy_Security" target="_blank" rel="noopener">Home Depot Privacy Policy</a></li>
+      <li><a href="https://www.lowes.com/l/about/privacy-statement" target="_blank" rel="noopener">Lowe's Privacy Statement</a></li>
+    </ul>
+    <p>When you click affiliate links, those retailers may use cookies or similar technologies to serve you interest-based advertising on their platforms and partner networks, per their own privacy policies. To opt out of interest-based advertising:</p>
+    <ul>
+      <li><a href="https://www.amazon.com/adprefs" target="_blank" rel="noopener">Amazon ad preferences</a></li>
+      <li><a href="https://www.homedepot.com/c/Privacy_Security" target="_blank" rel="noopener">Home Depot privacy settings</a></li>
+      <li><a href="https://www.lowes.com/l/about/privacy-statement" target="_blank" rel="noopener">Lowe's privacy statement</a></li>
+      <li><a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener">Network Advertising Initiative opt-out</a></li>
+      <li><a href="https://optout.aboutads.info/" target="_blank" rel="noopener">Digital Advertising Alliance opt-out</a></li>
+    </ul>
+
+    <h2>Bug Reports</h2>
+    <p>If you submit a bug report through the app, the report text and any attached screenshot are sent to our private GitHub repository. Do not include personal information in bug reports.</p>
+
+    <h2>Third-Party Services</h2>
+    <table>
+      <thead>
+        <tr><th>Service</th><th>Purpose</th><th>Data sent</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>PostHog</td><td>Analytics</td><td>Anonymous device ID, usage events</td></tr>
+        <tr><td>Amazon / Home Depot / Lowe's</td><td>Affiliate materials cart</td><td>Cart items via URL parameters</td></tr>
+        <tr><td>GitHub</td><td>Bug reports</td><td>Report text and screenshot</td></tr>
+        <tr><td>Fly.io</td><td>Cloud hosting</td><td>App requests (standard server logs)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Data We Do Not Collect</h2>
+    <ul>
+      <li>We do not log IP addresses at the application level</li>
+      <li>We do not embed advertising trackers in the app</li>
+      <li>We do not sell your data to third parties</li>
+      <li>We do not use browser cookies in the app (PostHog cookies are disabled)</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>The app does not knowingly collect personal information from children under 13. The core app requires no account and collects no personal data, so there is no mechanism for a child's personal information to be gathered. If you believe your child has provided personal information, contact us and we will remove it.</p>
+
+    <h2>Your Rights</h2>
+    <p>Any user may contact us at <a href="mailto:info@backyardblueprints.net">info@backyardblueprints.net</a> to request confirmation of what data we hold about them. Since the app collects no personal information linked to your identity, we will confirm that no identifiable data is held.</p>
+    <p>If you are an EU or California resident, you have additional rights regarding your personal data, including access, correction, deletion, and portability. To exercise these rights, contact us at the address below.</p>
+
+    <h2>Data Retention</h2>
+    <p>Anonymous analytics events are retained for 12 months on PostHog's cloud infrastructure, after which they are automatically deleted.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We will update this page when our practices change and revise the "Last updated" date above. Material changes to data practices will be communicated via an in-app notification or an updated Store listing. Continued use of the app after the effective date of non-material changes constitutes acceptance of those changes.</p>
+
+    <h2>Contact</h2>
+    <p>Backyard Blueprints LLC<br>
+    <a href="mailto:info@backyardblueprints.net">info@backyardblueprints.net</a></p>
+  </div>
+</main>
+
+<footer id="about">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Backyard Blueprints</div>
+      <p class="footer-tag">A DIY shed designer for makers, weekend warriors, and anyone tired of sketching on napkins.</p>
+      <div class="socials" style="margin-top: 16px;">
+        <a class="social" href="https://www.facebook.com/profile.php?id=61588832663791" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.5 9.88V14.9H8v-2.9h2.5V9.8c0-2.5 1.5-3.85 3.75-3.85 1.1 0 2.25.2 2.25.2v2.45h-1.27c-1.25 0-1.63.78-1.63 1.57V12h2.78l-.44 2.9h-2.34v6.98A10 10 0 0022 12z"/></svg>
+        </a>
+        <a class="social" href="https://instagram.com/backyardblueprintsapp" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a class="social" href="#" aria-label="Pinterest">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.64 7.85 6.36 9.31-.09-.79-.17-2 .04-2.86.18-.78 1.18-4.97 1.18-4.97s-.3-.6-.3-1.49c0-1.4.81-2.44 1.82-2.44.86 0 1.27.65 1.27 1.42 0 .87-.55 2.16-.84 3.36-.24 1 .51 1.82 1.5 1.82 1.8 0 3.18-1.9 3.18-4.64 0-2.43-1.74-4.12-4.23-4.12-2.88 0-4.57 2.16-4.57 4.39 0 .87.33 1.8.75 2.31.08.1.09.19.07.29-.07.31-.24.99-.27 1.13-.04.18-.14.22-.32.13-1.2-.56-1.95-2.31-1.95-3.72 0-3.03 2.2-5.81 6.34-5.81 3.33 0 5.92 2.37 5.92 5.54 0 3.31-2.09 5.97-4.99 5.97-.97 0-1.89-.5-2.2-1.1l-.6 2.28c-.22.83-.8 1.88-1.19 2.51.9.28 1.85.43 2.84.43 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+        </a>
+        <a class="social" href="#" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.45-5.18a2.6 2.6 0 00-1.83-1.84C19.05 4.5 12 4.5 12 4.5s-7.05 0-8.72.46a2.6 2.6 0 00-1.83 1.84C1 8.5 1 12 1 12s0 3.5.45 5.18a2.6 2.6 0 001.83 1.84C4.95 19.5 12 19.5 12 19.5s7.05 0 8.72-.46a2.6 2.6 0 001.83-1.84C23 15.5 23 12 23 12zM9.75 15.27V8.73L15.5 12l-5.75 3.27z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#download">Download</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html#about">About</a>
+      <a href="mailto:info@backyardblueprints.net">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="copyright">
+    <div>© 2026 Backyard Blueprints LLC · backyardblueprints.net</div>
+  </div>
+</footer>
+
+</body>
+</html>
